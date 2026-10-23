@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="bg-img p-3">
+        <div class="blur-filter p-4 rounded">
+
+            <div class="container p-3 rounded">
+                <h1 class="text-center bg-primary text-white p-3">Scan Cattle image</h1>
+                <hr class="opacity-100">
+                <div class="row d-flex align-items-center p-2">
+                    <form action="" method="post" enctype="multipart/form-data"
+                        class="col-md-4 p-4 bg-primary-light text-white " style="height: fit-content;">
+                        <div class="mb-3">
+                            <label for="model" class="form-label">Select Model</label>
+                            <select name="model" id="model" class="form-select">
+                                <option value="0">EfficientNet</option>
+                                <option value="1">ResNet</option>
+                                <option value="2">CNN</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Select image</label>
+                            <input type="file" class="form-control" name="imagefile" id="file">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-light">Submit</button>
+                        </div>
+                    </form>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-7 bg-primary-light text-light p-4" style="min-height: 250px;">
+                        <h2 class="text-center">Actual Image for detection</h2>
+                        <hr class="opacity-75">
+                        {% if image %}
+                        <div class="d-flex justify-content-center">
+                            <img src="{{ image }}" alt="" class="img-fluid" style="max-height: 350px;">
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5 text-light p-4 bg-primary-light">
+                <h2 class="text-center  fw-bold">Prediction</h2>
+                <hr class="opacity-100">
+                {% if result %}
+                <h3><b>Result - </b> Image is a <strong>{{result}}</strong></h3>
+                {% endif %}
+                {% if showRemedy %}
+                <p class="fs-custom mt-5">
+                    Learn more about controlling LSD <a href="/remedies" class="btn btn-light">Remedies</a>
+                </p>
+                <p class="fs-custom">
+                    Find Veterinarian Hospital/Doctor Nearby
+                    <a href="/search" class="btn btn-light">Search</a>
+                </p>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

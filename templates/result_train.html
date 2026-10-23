@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training Result</title>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container p-4 mt-5">
+        <h1 class="text-center fw-semibold">Result of Deep Learning models</h1>
+    </div>
+    <div class="container bg-primary-light text-white p-4 mt-5">
+        <h2 class="fw-semibold text-center">CNN (Improved & Enhanced Model)</h2>
+        <hr class="opacity-75 border-white">
+        <p class="fs-5">Training Accuracy : 86.94% </p>
+        <p class="fs-5">Test Accuracy : 87.35%</p>
+        <div class="container d-flex align-items-center justify-content-center">
+            <img src="../static/Models/output_cnn.png" alt="" class="img-fluid">
+        </div>
+    </div>
+    <div class="container bg-primary-light text-white p-4 mt-5">
+        <h2 class="fw-semibold text-center">ResNet50</h2>
+        <hr class="opacity-75 border-white">
+        <p class="fs-5">Training Accuracy : 92.66% </p>
+        <p class="fs-5">Test Accuracy : 94.03%</p>
+        <div class="container d-flex align-items-center justify-content-center">
+            <img src="../static/Models/output_res.png" alt="" class="img-fluid">
+        </div>
+    </div>
+    <div class="container bg-primary-light text-white p-4 mt-5">
+        <h2 class="fw-semibold text-center">EfficientNetV2B0</h2>
+        <hr class="opacity-75 border-white">
+        <p class="fs-5">Training Accuracy : 93.31% </p>
+        <p class="fs-5">Test Accuracy : 93.46%</p>
+        <div class="container d-flex align-items-center justify-content-center">
+            <img src="../static/Models/output_eff.png" alt="" class="img-fluid">
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

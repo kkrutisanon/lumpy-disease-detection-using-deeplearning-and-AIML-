@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<style>
+    .bg-primary {
+        background-color: #550000 !important;
+    }
+
+    .bg-primary-light {
+        background-color: #800000 !important;
+    }
+
+    .bg-primary-dark {
+        background-color: #330000 !important;
+    }
+
+    .bg-content {
+        background-color: #d3d3d3 !important;
+    }
+
+    .fs-custom {
+        font-size: 1.15rem !important;
+    }
+
+    .btn-primary-dark {
+        background-color: #800000;
+        color: #fff;
+    }
+
+    .btn-primary-dark:hover {
+        background-color: #330000;
+        color: #fff;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark" style="background-color: #edf6fc4e;">
+    <div class="container-fluid ">
+        <a class="navbar-brand text-white" href="/">Cattle-Care AI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " style="flex-grow: 0;" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Deep Learning
+                    </a>
+                    <ul class="dropdown-menu bg-primary-light" data-bs-theme="dark">
+                        <li><a class="dropdown-item" href="/model">Models</a></li>
+                        <li><a class="dropdown-item" href="/result">Result</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/remedies">Remedies</a>
+                </li>
+                {% if session.get('logged') %}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/output">Scan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/logout">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/login">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

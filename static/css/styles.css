@@ -1,0 +1,9 @@
+.bg-img {
+    background-image: url('../images/bg/bg-scan2.jpg');
+    background-size: cover;
+}
+
+.blur-filter {
+    backdrop-filter: blur(4px);
+    background-color: #ffffff25;
+}

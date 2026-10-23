@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="container p-3 mt-3 shadow bg-primary-light">
+        <div class="row d-flex justify-content-center gap">
+            <div class="col-md-5 d-flex justify-content-center">
+                <img src="../static/images/bg/bg2.jpg" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 bg-body p-3">
+                <h3 class="text-center fw-semibold">About Us</h3>
+                <hr>
+                <p class="fs-custom">
+                    Welcome to Cattle-Care AI, your trusted partner in safeguarding cattle health. Our innovative web
+                    application is designed to empower farmers and veterinarians with the tools they need to prevent and
+                    mitigate the devastating effects of Lumpy Skin Disease (LSD). Leveraging advanced machine learning
+                    technology, we provide accurate and timely disease detection, helping to protect livestock and
+                    ensure sustainable agricultural practices.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-3 mt-5 bg-primary-light border rounded">
+        <div class="row">
+            <div class="container-fluid col-md-5 p-3 bg-body">
+                <h3 class="fw-semibold">Our Aim</h3>
+                <hr>
+                <p class="fs-custom">
+                    Our aim is to revolutionize Lumpy Skin Disease prevention by offering a user-friendly, affordable,
+                    and highly accurate AI-powered solution. By empowering farmers and veterinarians with early
+                    detection capabilities, we strive to minimize the economic impact of LSD outbreaks and promote the
+                    overall well-being of cattle populations.
+                </p>
+            </div>
+            <div class="vr p-0  opacity-100 bg-white"></div>
+            <div class="container-fluid col-md-6 p-3 bg-body">
+                <h3 class="fw-semibold">Our Objective</h3>
+                <hr>
+                <p class="fs-custom">
+                    Our objective is to develop and deploy a cutting-edge Lumpy Skin Disease detection tool that is
+                    accessible to farmers and veterinarians worldwide. By harnessing the power of artificial
+                    intelligence, we aim to improve disease surveillance, facilitate rapid response efforts, and
+                    contribute to the overall health and productivity of cattle herds.
+                </p>
+            </div>
+        </div>
+        <hr class="opacity-100 border-white">
+        <div class="row">
+            <div class="container-fluid col-md-6 p-3 bg-body">
+                <h3 class="fw-semibold">Our Team</h3>
+                <hr>
+                <p class="fs-custom">
+                    Our dedicated team of experts brings together a diverse range of skills and experience in computer
+                    science, veterinary medicine, and agricultural technology. Passionate about animal health and
+                    innovation, we are committed to developing and delivering solutions that make a positive impact on
+                    the livestock industry.
+                </p>
+            </div>
+            <div class="vr p-0 opacity-100 bg-white"></div>
+            <div class="container-fluid col-md-5 p-3 bg-body">
+                <h3 class="fw-semibold">Our Technology</h3>
+                <hr>
+                <p class="fs-custom">
+                    Our Lumpy Skin Disease detection model is built on a robust foundation of deep learning
+                    architectures, including Convolutional Neural Networks (CNNs), Residual Networks (ResNets), and
+                    EfficientNets. These advanced models are trained on a meticulously curated and preprocessed dataset
+                    sourced from authentic and reliable sources, ensuring the accuracy and reliability of our
+                    predictions.
+                    <br>
+                    For more information <a href="/model">click here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

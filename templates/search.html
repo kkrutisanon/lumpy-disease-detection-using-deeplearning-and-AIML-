@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .page-item.active .page-link {
+            background-color: #800000;
+            border: none;
+        }
+    </style>
+    <title>Find Doctors/hospitals</title>
+</head>
+{% include 'navbar.html' %}
+
+<div class="container mt-5">
+    <h3 class="text-center fw-semibold">Find Veterinarian Doctor / Hospital Nearby</h3>
+</div>
+<hr class="opacity-100">
+<div class="container d-flex justify-content-end">
+    <form action="/search" method="post" class="d-flex gap-2">
+        <input type="text" class="form-control" name="search" placeholder="Search your Taluk">
+        <button class="btn btn-primary-dark">Search</button>
+    </form>
+</div>
+<div class="container-fluid">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Taluk</th>
+                <th scope="col">Name of the Hospital</th>
+                <th scope="col">Place</th>
+                <th scope="col">Address</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Google Map Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ item['Taluk'] }}</td>
+                <td>{{ item['Name of the Hospital'] }}</td>
+                <td>{{ item['Place'] }}</td>
+                <td>{{ item['Address'] }}</td>
+                <td>{{ item['Name of the Doctor'] }}</td>
+                <td>{{ item['Phone no'] }}</td>
+                <td>
+                    <a href="{{ item['google links'] }}" target="_blank">
+                        {{ item['google links'] }}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="container-fluid d-flex justify-content-end">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if current_page > 1 %}
+            <li class="page-item">
+                <a class="page-link" href="{{ url_for('data_page', page_number=current_page-1) }}"
+                    aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            {% for page_num in range(1, total_pages+1) %}
+
+
+            <li {% if page_num==current_page %}class="page-item active" {% else %} class="page-item" {% endif %}>
+                <a class="page-link" href="{{ url_for('data_page', page_number=page_num) }}">{{ page_num }}</a>
+            </li>
+            {% endfor %}
+
+            {% if current_page < total_pages %} <li class="page-item">
+                <a class="page-link" href="{{ url_for('data_page', page_number=current_page+1) }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
+                {% endif %}
+        </ul>
+    </nav>
+</div>
+
+
+{% include 'footer.html' %}
+
+<body>
+
+</body>
+
+</html>
